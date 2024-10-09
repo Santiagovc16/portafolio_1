@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoja de Vida - Santiago Velasco Cobo</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .skills-list li {
+      display: inline-block;
+      background-color: #f8f9fa;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    .section-title {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Hoja de Vida</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#educacion">Educación</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header (Inicio) -->
+  <header class="bg-primary text-white text-center py-5" id="inicio">
+    <h1>Santiago Velasco Cobo</h1>
+    <p>Tecnología en Desarrollo de Software</p>
+    <p>Edad: 26 años</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+
+    <!-- Perfil Personal -->
+    <section id="perfil">
+      <h2 class="text-primary section-title">Perfil Personal</h2>
+      <p>Soy un estudiante de Tecnología en Desarrollo de Software, apasionado por la programación y el desarrollo de soluciones eficientes. Mi enfoque principal es la creación de aplicaciones web utilizando lenguajes como Python, HTML y CSS. Estoy en constante aprendizaje y tengo un gran interés en mejorar mis habilidades técnicas y colaborar en proyectos innovadores.</p>
+    </section>
+
+    <!-- Habilidades con barras de progreso -->
+    <section class="my-5" id="habilidades">
+      <h2 class="text-primary section-title">Habilidades Técnicas</h2>
+      <div class="progress my-2">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Python - 90%</div>
+      </div>
+      <div class="progress my-2">
+        <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">HTML5 - 80%</div>
+      </div>
+      <div class="progress my-2">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">CSS3 - 70%</div>
+      </div>
+      <div class="progress my-2">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Bootstrap - 75%</div>
+      </div>
+    </section>
+
+    <!-- Lenguajes de Programación -->
+    <section class="my-5" id="lenguajes">
+      <h2 class="text-primary section-title">Lenguajes de Programación</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="img-fluid" style="width: 100px;">
+          <p>Python</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="img-fluid" style="width: 100px;">
+          <p>HTML</p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="img-fluid" style="width: 100px;">
+          <p>CSS</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos Personales con modales -->
+    <section class="my-5" id="proyectos">
+      <h2 class="text-primary section-title">Proyectos Personales</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="#" data-toggle="modal" data-target="#proyectoModal1">Proyecto 1: Aplicación Web en Python</a>
+        </li>
+        <li class="list-group-item">
+          <a href="#" data-toggle="modal" data-target="#proyectoModal2">Proyecto 2: Landing Page en HTML/CSS</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Modal para Proyecto 1 -->
+    <div class="modal fade" id="proyectoModal1" tabindex="-1" role="dialog" aria-labelledby="proyectoModal1Label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="proyectoModal1Label">Proyecto 1: Aplicación Web en Python</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Detalles sobre la aplicación web creada en Python, incluyendo su propósito, herramientas utilizadas, y retos enfrentados durante el desarrollo.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para Proyecto 2 -->
+    <div class="modal fade" id="proyectoModal2" tabindex="-1" role="dialog" aria-labelledby="proyectoModal2Label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="proyectoModal2Label">Proyecto 2: Landing Page en HTML/CSS</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Explicación sobre la creación de una página de aterrizaje (landing page) utilizando HTML5 y CSS3, con un enfoque en diseño responsivo.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educación -->
+    <section class="my-5" id="educacion">
+      <h2 class="text-primary section-title">Educación</h2>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle
+        </li>
+        <!-- Puedes añadir más detalles educativos aquí -->
+      </ul>
+    </section>
+
+    <!-- Contacto -->
+    <section class="my-5" id="contacto">
+      <h2 class="text-primary section-title">Contacto</h2>
+      <h2>hola mundo gigante</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Email:</strong> santiago.velasco@example.com</p>
+          <p><strong>Teléfono:</strong> +57 123 456 7890</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/santiagovelasco"
+ 
+
+          
