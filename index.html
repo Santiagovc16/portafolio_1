@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hoja de Vida - Santiago Velasco Cobo</title>
-  
-  <!-- Enlace a la hoja de estilos de Bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Estilos personalizados -->
   <style>
-    /* Estilo para las habilidades en forma de lista */
-    .skills-list li {
-      display: inline-block;
+    body {
+      font-family: Arial, sans-serif;
       background-color: #f8f9fa;
-      padding: 10px;
-      margin: 5px;
-      border-radius: 5px;
+      padding: 20px;
     }
-    
-    /* Estilo para los títulos de las secciones */
-    .section-title {
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      color: #007bff;
       border-bottom: 2px solid #007bff;
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
-    
-    /* Margen inferior para las barras de progreso */
     .progress {
       margin-bottom: 15px;
     }
-    
-    /* Bordes redondeados para los modales */
+    .progress-bar {
+      background-color: #007bff;
+    }
+    .list-group-item {
+      margin-bottom: 10px;
+    }
     .modal-content {
       border-radius: 10px;
     }
-    
-    /* Margen inferior para la barra de navegación */
     .navbar {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-    
-    /* Margen inferior para el encabezado */
-    header {
-      margin-bottom: 40px;
+    /* Estilos redundantes */
+    .navbar {
+      margin-bottom: 20px;
+    }
+    .navbar {
+      margin-bottom: 20px;
+    }
+    .navbar {
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -53,11 +59,9 @@
   <!-- Barra de Navegación -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Hoja de Vida</a>
-    <!-- Botón para colapsar la barra en dispositivos móviles -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- Menú de navegación -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -83,72 +87,66 @@
   </nav>
 
   <!-- Encabezado de la página -->
-  <header class="bg-primary text-white text-center py-5" id="inicio">
+  <header id="inicio">
     <h1>Santiago Velasco Cobo</h1>
-    <p class="lead">Desarrollador de Software</p>
+    <p>Desarrollador de Software</p>
     <p>Edad: 26 años</p>
   </header>
 
   <!-- Contenido Principal -->
-  <main class="container my-5">
+  <main class="container">
 
     <!-- Sección de Perfil Personal -->
     <section id="perfil">
-      <h2 class="text-primary section-title">Perfil Personal</h2>
-      <p class="text-justify">
+      <h2>Perfil Personal</h2>
+      <p>
         Soy un estudiante de Tecnología en Desarrollo de Software, apasionado por la programación y el desarrollo de soluciones eficientes. Mi enfoque principal es la creación de aplicaciones web utilizando tecnologías como Python, HTML y CSS. Estoy en constante aprendizaje y tengo un gran interés en mejorar mis habilidades técnicas para colaborar en proyectos innovadores.
       </p>
     </section>
 
     <!-- Sección de Habilidades Técnicas -->
-    <section id="habilidades" class="my-5">
-      <h2 class="text-primary section-title">Habilidades Técnicas</h2>
-      <!-- Barras de progreso para mostrar el nivel de habilidades -->
+    <section id="habilidades">
+      <h2>Habilidades Técnicas</h2>
       <div class="progress">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;">Python - 90%</div>
+        <div class="progress-bar" style="width: 90%;">Python - 90%</div>
       </div>
       <div class="progress">
-        <div class="progress-bar bg-info" role="progressbar" style="width: 80%;">HTML5 - 80%</div>
+        <div class="progress-bar" style="width: 80%;">HTML5 - 80%</div>
       </div>
       <div class="progress">
-        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;">CSS3 - 70%</div>
+        <div class="progress-bar" style="width: 70%;">CSS3 - 70%</div>
       </div>
       <div class="progress">
-        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;">Bootstrap - 75%</div>
+        <div class="progress-bar" style="width: 75%;">Bootstrap - 75%</div>
       </div>
     </section>
 
     <!-- Sección de Lenguajes de Programación -->
-    <section id="lenguajes" class="my-5">
-      <h2 class="text-primary section-title">Lenguajes de Programación</h2>
+    <section id="lenguajes">
+      <h2>Lenguajes de Programación</h2>
       <div class="row text-center">
-        <!-- Logo y nombre de Python -->
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="img-fluid" style="width: 100px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" style="width: 100px;">
           <p>Python</p>
         </div>
-        <!-- Logo y nombre de HTML -->
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="img-fluid" style="width: 100px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" style="width: 100px;">
           <p>HTML</p>
         </div>
-        <!-- Logo y nombre de CSS -->
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="img-fluid" style="width: 100px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" style="width: 100px;">
           <p>CSS</p>
         </div>
       </div>
     </section>
 
     <!-- Sección de Proyectos Personales -->
-    <section id="proyectos" class="my-5">
-      <h2 class="text-primary section-title">Proyectos Personales</h2>
+    <section id="proyectos">
+      <h2>Proyectos Personales</h2>
       <ul class="list-group">
-        <!-- Enlace al modal del Proyecto 1: Red Neuronal -->
         <li class="list-group-item">
           <a href="#" data-toggle="modal" data-target="#proyecto1">Proyecto 1: Red Neuronal para Reconocimiento de Imágenes</a>
         </li>
-        <!-- Enlace al modal del Proyecto 2: BancApp -->
         <li class="list-group-item">
           <a href="#" data-toggle="modal" data-target="#proyecto2">Proyecto 2: BancApp - Aplicación Bancaria con Laravel</a>
         </li>
@@ -156,18 +154,18 @@
     </section>
 
     <!-- Modal para el Proyecto 1: Red Neuronal -->
-    <div class="modal fade" id="proyecto1" tabindex="-1" role="dialog" aria-labelledby="proyecto1Label" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" id="proyecto1" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="proyecto1Label">Proyecto 1: Red Neuronal para Reconocimiento de Imágenes</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-              <span aria-hidden="true">&times;</span>
+            <h5 class="modal-title">Proyecto 1: Red Neuronal para Reconocimiento de Imágenes</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <p>
-            Desarrollé una red neuronal convolucional (CNN) utilizando Python y TensorFlow para el reconocimiento de imágenes. El proyecto incluye diferenciar gatos de perros  y otros.
+              Desarrollé una red neuronal convolucional (CNN) utilizando Python y TensorFlow para el reconocimiento de imágenes. El proyecto incluye diferenciar gatos de perros y otros.
             </p>
           </div>
           <div class="modal-footer">
@@ -178,13 +176,13 @@
     </div>
 
     <!-- Modal para el Proyecto 2: BancApp -->
-    <div class="modal fade" id="proyecto2" tabindex="-1" role="dialog" aria-labelledby="proyecto2Label" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+    <div class="modal fade" id="proyecto2" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="proyecto2Label">Proyecto 2: BancApp - Aplicación Bancaria con Laravel</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-              <span aria-hidden="true">&times;</span>
+            <h5 class="modal-title">Proyecto 2: BancApp - Aplicación Bancaria con Laravel</h5>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
             </button>
           </div>
           <div class="modal-body">
@@ -200,8 +198,8 @@
     </div>
 
     <!-- Sección de Educación -->
-    <section id="educacion" class="my-5">
-      <h2 class="text-primary section-title">Educación</h2>
+    <section id="educacion">
+      <h2>Educación</h2>
       <ul class="list-group">
         <li class="list-group-item">
           <strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle (En curso)
@@ -210,14 +208,13 @@
     </section>
 
     <!-- Sección de Contacto -->
-    <section id="contacto" class="my-5">
-      <h2 class="text-primary section-title">Contacto</h2>
+    <section id="contacto">
+      <h2>Contacto</h2>
       <div class="row">
         <div class="col-md-6">
           <p><strong>Email:</strong> santiago.velasco@correounivalle.edu.co</p>
           <p><strong>Teléfono:</strong> +57 3005157699</p>
         </div>
-        
       </div>
     </section>
   </main>
