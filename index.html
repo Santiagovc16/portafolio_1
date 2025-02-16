@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hoja de Vida - Santiago Velasco Cobo</title>
+  
+  <!-- Enlace a la hoja de estilos de Bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Estilos personalizados -->
   <style>
+    /* Estilo para las habilidades en forma de lista */
     .skills-list li {
       display: inline-block;
       background-color: #f8f9fa;
@@ -13,83 +19,120 @@
       margin: 5px;
       border-radius: 5px;
     }
+    
+    /* Estilo para los títulos de las secciones */
     .section-title {
       border-bottom: 2px solid #007bff;
       padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    /* Margen inferior para las barras de progreso */
+    .progress {
+      margin-bottom: 15px;
+    }
+    
+    /* Bordes redondeados para los modales */
+    .modal-content {
+      border-radius: 10px;
+    }
+    
+    /* Margen inferior para la barra de navegación */
+    .navbar {
+      margin-bottom: 30px;
+    }
+    
+    /* Margen inferior para el encabezado */
+    header {
+      margin-bottom: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Barra de Navegación -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Hoja de Vida</a>
+    <!-- Botón para colapsar la barra en dispositivos móviles -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- Menú de navegación -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-       
         <li class="nav-item">
-
-          <a class="nav-link" href="#contacto">Contacto</a>
+          <a class="nav-link" href="#inicio">Inicio</a>
         </li>
         <li class="nav-item">
-          
-          <a class="nav-link" href="#Inicio">Inicio</a>
+          <a class="nav-link" href="#perfil">Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#habilidades">Habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#proyectos">Proyectos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#educacion">Educación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- Header (Inicio) -->
+  <!-- Encabezado de la página -->
   <header class="bg-primary text-white text-center py-5" id="inicio">
     <h1>Santiago Velasco Cobo</h1>
-    <p>Desarrollo de Software</p>
+    <p class="lead">Desarrollador de Software</p>
     <p>Edad: 26 años</p>
   </header>
 
-  <!-- Main Content -->
+  <!-- Contenido Principal -->
   <main class="container my-5">
 
-    <!-- Perfil Personal -->
+    <!-- Sección de Perfil Personal -->
     <section id="perfil">
       <h2 class="text-primary section-title">Perfil Personal</h2>
-      <p>Soy un estudiante de Tecnología en Desarrollo de Software, apasionado por la programación y el desarrollo de soluciones eficientes. Mi enfoque principal es la creación de aplicaciones web utilizando lenguajes como Python, HTML y CSS. Estoy en constante aprendizaje y tengo un gran interés en mejorar mis habilidades técnicas y colaborar en proyectos innovadores.</p>
+      <p class="text-justify">
+        Soy un estudiante de Tecnología en Desarrollo de Software, apasionado por la programación y el desarrollo de soluciones eficientes. Mi enfoque principal es la creación de aplicaciones web utilizando tecnologías como Python, HTML y CSS. Estoy en constante aprendizaje y tengo un gran interés en mejorar mis habilidades técnicas para colaborar en proyectos innovadores.
+      </p>
     </section>
 
-    <!-- Habilidades con barras de progreso -->
-    <section class="my-5" id="habilidades">
+    <!-- Sección de Habilidades Técnicas -->
+    <section id="habilidades" class="my-5">
       <h2 class="text-primary section-title">Habilidades Técnicas</h2>
-      <div class="progress my-2">
-        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Python - 90%</div>
+      <!-- Barras de progreso para mostrar el nivel de habilidades -->
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;">Python - 90%</div>
       </div>
-      <div class="progress my-2">
-        <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">HTML5 - 80%</div>
+      <div class="progress">
+        <div class="progress-bar bg-info" role="progressbar" style="width: 80%;">HTML5 - 80%</div>
       </div>
-      <div class="progress my-2">
-        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">CSS3 - 70%</div>
+      <div class="progress">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;">CSS3 - 70%</div>
       </div>
-      <div class="progress my-2">
-        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Bootstrap - 75%</div>
+      <div class="progress">
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 75%;">Bootstrap - 75%</div>
       </div>
     </section>
 
-    <!-- Lenguajes de Programación -->
-    <section class="my-5" id="lenguajes">
-      <h2 class="text-primary section-title">Lenguajes de </h2>
+    <!-- Sección de Lenguajes de Programación -->
+    <section id="lenguajes" class="my-5">
+      <h2 class="text-primary section-title">Lenguajes de Programación</h2>
       <div class="row text-center">
+        <!-- Logo y nombre de Python -->
         <div class="col-md-4">
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="img-fluid" style="width: 100px;">
           <p>Python</p>
         </div>
+        <!-- Logo y nombre de HTML -->
         <div class="col-md-4">
           <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="img-fluid" style="width: 100px;">
           <p>HTML</p>
         </div>
+        <!-- Logo y nombre de CSS -->
         <div class="col-md-4">
           <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="img-fluid" style="width: 100px;">
           <p>CSS</p>
@@ -97,31 +140,35 @@
       </div>
     </section>
 
-    <!-- Proyectos Personales con modales -->
-    <section class="my-5" id="proyectos">
+    <!-- Sección de Proyectos Personales -->
+    <section id="proyectos" class="my-5">
       <h2 class="text-primary section-title">Proyectos Personales</h2>
       <ul class="list-group">
+        <!-- Enlace al modal del Proyecto 1: Red Neuronal -->
         <li class="list-group-item">
-          <a href="#" data-toggle="modal" data-target="#proyectoModal1">Proyecto 1: Aplicación Web en Python</a>
+          <a href="#" data-toggle="modal" data-target="#proyecto1">Proyecto 1: Red Neuronal para Reconocimiento de Imágenes</a>
         </li>
+        <!-- Enlace al modal del Proyecto 2: BancApp -->
         <li class="list-group-item">
-          <a href="#" data-toggle="modal" data-target="#proyectoModal2">Proyecto 2: Landing Page en HTML/CSS</a>
+          <a href="#" data-toggle="modal" data-target="#proyecto2">Proyecto 2: BancApp - Aplicación Bancaria con Laravel</a>
         </li>
       </ul>
     </section>
 
-    <!-- Modal para Proyecto 1 -->
-    <div class="modal fade" id="proyectoModal1" tabindex="-1" role="dialog" aria-labelledby="proyectoModal1Label" aria-hidden="true">
+    <!-- Modal para el Proyecto 1: Red Neuronal -->
+    <div class="modal fade" id="proyecto1" tabindex="-1" role="dialog" aria-labelledby="proyecto1Label" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="proyectoModal1Label">Proyecto 1: Aplicación Web en Python</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="proyecto1Label">Proyecto 1: Red Neuronal para Reconocimiento de Imágenes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            Detalles sobre la aplicación web creada en Python, incluyendo su propósito, herramientas utilizadas, y retos enfrentados durante el desarrollo.
+            <p>
+            Desarrollé una red neuronal convolucional (CNN) utilizando Python y TensorFlow para el reconocimiento de imágenes. El proyecto incluye diferenciar gatos de perros  y otros.
+            </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -130,18 +177,20 @@
       </div>
     </div>
 
-    <!-- Modal para Proyecto 2 -->
-    <div class="modal fade" id="proyectoModal2" tabindex="-1" role="dialog" aria-labelledby="proyectoModal2Label" aria-hidden="true">
+    <!-- Modal para el Proyecto 2: BancApp -->
+    <div class="modal fade" id="proyecto2" tabindex="-1" role="dialog" aria-labelledby="proyecto2Label" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="proyectoModal2Label">Proyecto 2: Landing Page en HTML/CSS</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="proyecto2Label">Proyecto 2: BancApp - Aplicación Bancaria con Laravel</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            Explicación sobre la creación de una página de aterrizaje (landing page) utilizando HTML5 y CSS3, con un enfoque en diseño responsivo.
+            <p>
+              Desarrollé una aplicación bancaria llamada BancApp utilizando el framework Laravel. La aplicación permite a los usuarios realizar transferencias, consultar saldos, y gestionar cuentas. Implementé autenticación de usuarios, transacciones seguras con API de pagos, y un panel de administración para gestionar clientes y transacciones.
+            </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -150,28 +199,34 @@
       </div>
     </div>
 
-    <!-- Educación -->
-    <section class="my-5" id="educacion">
+    <!-- Sección de Educación -->
+    <section id="educacion" class="my-5">
       <h2 class="text-primary section-title">Educación</h2>
       <ul class="list-group">
         <li class="list-group-item">
-          <strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle
+          <strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle (En curso)
         </li>
-        <!-- Puedes añadir más detalles educativos aquí -->
       </ul>
     </section>
 
-    <!-- Contacto -->
-    <section class="my-5" id="contacto">
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="my-5">
       <h2 class="text-primary section-title">Contacto</h2>
-      <h2>hola mundo gigante</h2>
       <div class="row">
         <div class="col-md-6">
           <p><strong>Email:</strong> santiago.velasco@example.com</p>
           <p><strong>Teléfono:</strong> +57 123 456 7890</p>
         </div>
         <div class="col-md-6">
-          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/santiagovelasco"
- 
+          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/santiagovelasco" target="_blank">linkedin.com/in/santiagovelasco</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-          
+  <!-- Scripts de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
