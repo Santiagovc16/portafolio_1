@@ -2,226 +2,247 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoja de Vida - Santiago Velasco Cobo</title>
+  <title>Hoja de Vida - Santiago Velasco</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
-      padding: 20px;
+      font-family: Arial;
+      background-color: #f0f0f0;
+      padding: 10px;
     }
     header {
       background-color: #007bff;
       color: white;
-      padding: 20px;
+      padding: 15px;
       text-align: center;
-      margin-bottom: 20px;
     }
     h1 {
-      font-size: 2.5em;
+      font-size: 30px;
     }
     h2 {
       color: #007bff;
-      border-bottom: 2px solid #007bff;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+      padding: 5px;
     }
     .progress {
-      margin-bottom: 15px;
+      margin: 10px;
     }
     .progress-bar {
       background-color: #007bff;
     }
-    .list-group-item {
-      margin-bottom: 10px;
+    .navbar-nav {
+      margin: 0 auto;
     }
-    .modal-content {
-      border-radius: 10px;
-    }
-    .navbar {
-      margin-bottom: 20px;
-    }
-    /* Estilos redundantes */
-    .navbar {
-      margin-bottom: 20px;
-    }
-    .navbar {
-      margin-bottom: 20px;
-    }
-    .navbar {
-      margin-bottom: 20px;
+    .logo {
+      width: 80px;
+      transition: transform 0.5s;
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra de Navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Hoja de Vida</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <ul class="navbar-nav d-flex flex-row justify-content-center">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#inicio">Inicio</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#perfil">Perfil</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#habilidades">Habilidades</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#proyectos">Proyectos</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#educacion">Educación</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mx-3">
           <a class="nav-link" href="#contacto">Contacto</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <!-- Encabezado de la página -->
   <header id="inicio">
-    <h1>Santiago Velasco Cobo</h1>
+    <h1 id="nombre">Santiago Velasco Cobo</h1>
     <p>Desarrollador de Software</p>
-    <p>Edad: 26 años</p>
+    <p>Edad: 26</p>
   </header>
 
-  <!-- Contenido Principal -->
-  <main class="container">
-
-    <!-- Sección de Perfil Personal -->
+  <div class="container">
     <section id="perfil">
       <h2>Perfil Personal</h2>
-      <p>
-        Soy un estudiante de Tecnología en Desarrollo de Software, apasionado por la programación y el desarrollo de soluciones eficientes. Mi enfoque principal es la creación de aplicaciones web utilizando tecnologías como Python, HTML y CSS. Estoy en constante aprendizaje y tengo un gran interés en mejorar mis habilidades técnicas para colaborar en proyectos innovadores.
-      </p>
+      <p>Soy estudiante de Tecnología en Desarrollo de Software y me gusta mucho programar. Me enfoco en hacer aplicaciones web con Python, HTML y CSS. Siempre estoy aprendiendo cosas nuevas para mejorar. Me emociona crear páginas que la gente pueda usar y también estoy empezando a explorar cómo funcionan las bases de datos porque quiero hacer proyectos más grandes. Mi meta es algún día trabajar en un equipo donde pueda seguir creciendo y hacer algo útil con código.</p>
     </section>
 
-    <!-- Sección de Habilidades Técnicas -->
     <section id="habilidades">
-      <h2>Habilidades Técnicas</h2>
+      <h2>Mis Habilidades</h2>
       <div class="progress">
-        <div class="progress-bar" style="width: 90%;">Python - 90%</div>
+        <div class="progress-bar" id="bar1" style="width: 0%;">Python - 90%</div>
       </div>
       <div class="progress">
-        <div class="progress-bar" style="width: 80%;">HTML5 - 80%</div>
+        <div class="progress-bar" id="bar2" style="width: 0%;">HTML - 80%</div>
       </div>
       <div class="progress">
-        <div class="progress-bar" style="width: 70%;">CSS3 - 70%</div>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" style="width: 75%;">Bootstrap - 75%</div>
+        <div class="progress-bar" id="bar3" style="width: 0%;">CSS - 70%</div>
       </div>
     </section>
 
-    <!-- Sección de Lenguajes de Programación -->
     <section id="lenguajes">
-      <h2>Lenguajes de Programación</h2>
-      <div class="row text-center">
+      <h2>Lenguajes que uso</h2>
+      <div class="row">
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" style="width: 100px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="logo" id="logo1">
           <p>Python</p>
         </div>
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" style="width: 100px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="logo" id="logo2">
           <p>HTML</p>
         </div>
         <div class="col-md-4">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" style="width: 100px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="logo" id="logo3">
           <p>CSS</p>
         </div>
       </div>
     </section>
 
-    <!-- Sección de Proyectos Personales -->
     <section id="proyectos">
-      <h2>Proyectos Personales</h2>
+      <h2>Proyectos que hice</h2>
       <ul class="list-group">
         <li class="list-group-item">
-          <a href="#" data-toggle="modal" data-target="#proyecto1">Proyecto 1: Red Neuronal para Reconocimiento de Imágenes</a>
+          <a href="#" data-toggle="modal" data-target="#proyecto1">Red Neuronal para Imágenes</a>
         </li>
         <li class="list-group-item">
-          <a href="#" data-toggle="modal" data-target="#proyecto2">Proyecto 2: BancApp - Aplicación Bancaria con Laravel</a>
+          <a href="#" data-toggle="modal" data-target="#proyecto2">BancApp con Laravel</a>
         </li>
       </ul>
     </section>
 
-    <!-- Modal para el Proyecto 1: Red Neuronal -->
-    <div class="modal fade" id="proyecto1" tabindex="-1" role="dialog">
+    <div class="modal fade" id="proyecto1">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="modal1">
           <div class="modal-header">
-            <h5 class="modal-title">Proyecto 1: Red Neuronal para Reconocimiento de Imágenes</h5>
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
+            <h5>Red Neuronal para Imágenes</h5>
+            <button type="button" class="close" data-dismiss="modal">X</button>
           </div>
           <div class="modal-body">
-            <p>
-              Desarrollé una red neuronal convolucional (CNN) utilizando Python y TensorFlow para el reconocimiento de imágenes. El proyecto incluye diferenciar gatos de perros y otros.
-            </p>
+            <p>Hice una red neuronal con Python y TensorFlow para reconocer imágenes, como gatos y perros.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal para el Proyecto 2: BancApp -->
-    <div class="modal fade" id="proyecto2" tabindex="-1" role="dialog">
+    <div class="modal fade" id="proyecto2">
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="modal2">
           <div class="modal-header">
-            <h5 class="modal-title">Proyecto 2: BancApp - Aplicación Bancaria con Laravel</h5>
-            <button type="button" class="close" data-dismiss="modal">
-              <span>&times;</span>
-            </button>
+            <h5>BancApp con Laravel</h5>
+            <button type="button" class="close" data-dismiss="modal">X</button>
           </div>
           <div class="modal-body">
-            <p>
-              Desarrollé una aplicación bancaria llamada BancApp utilizando el framework Laravel. La aplicación permite a los usuarios realizar transferencias, consultar saldos, y gestionar cuentas. Implementé autenticación de usuarios, transacciones seguras con API de pagos, y un panel de administración para gestionar clientes y transacciones.
-            </p>
+            <p>Hice una app bancaria con Laravel. Tiene transferencias, consulta de saldos y más cosas.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Sección de Educación -->
     <section id="educacion">
       <h2>Educación</h2>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle (En curso)
-        </li>
-      </ul>
+      <p><strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle (estoy estudiando)</p>
     </section>
 
-    <!-- Sección de Contacto -->
     <section id="contacto">
       <h2>Contacto</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <p><strong>Email:</strong> santiago.velasco@correounivalle.edu.co</p>
-          <p><strong>Teléfono:</strong> +57 3005157699</p>
-        </div>
-      </div>
+      <p>Email: santiago.velasco@correounivalle.edu.co</p>
+      <p>Teléfono: +57 3005157699</p>
     </section>
-  </main>
+  </div>
 
-  <!-- Scripts de Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    let nombre = document.getElementById("nombre");
+    let posicion = 0;
+    function moverNombre() {
+      posicion = posicion + 1;
+      if (posicion > 10) {
+        posicion = -10;
+      }
+      nombre.style.marginTop = posicion + "px";
+    }
+    setInterval(moverNombre, 100);
+
+    let barra1 = document.getElementById("bar1");
+    let barra2 = document.getElementById("bar2");
+    let barra3 = document.getElementById("bar3");
+    let ancho1 = 0;
+    let ancho2 = 0;
+    let ancho3 = 0;
+
+    function llenarBarras() {
+      if (ancho1 < 90) {
+        ancho1 = ancho1 + 1;
+        barra1.style.width = ancho1 + "%";
+      }
+      if (ancho2 < 80) {
+        ancho2 = ancho2 + 1;
+        barra2.style.width = ancho2 + "%";
+      }
+      if (ancho3 < 70) {
+        ancho3 = ancho3 + 1;
+        barra3.style.width = ancho3 + "%";
+      }
+    }
+    setInterval(llenarBarras, 20);
+
+    let modal1 = document.getElementById("modal1");
+    let modal2 = document.getElementById("modal2");
+    let colores = ["#ffcccc", "#cce5ff", "#ccffcc"];
+    let colorIndex = 0;
+
+    function cambiarColorModal() {
+      modal1.style.backgroundColor = colores[colorIndex];
+      modal2.style.backgroundColor = colores[colorIndex];
+      colorIndex = colorIndex + 1;
+      if (colorIndex > 2) {
+        colorIndex = 0;
+      }
+    }
+    setInterval(cambiarColorModal, 1000);
+
+    let logo1 = document.getElementById("logo1");
+    let logo2 = document.getElementById("logo2");
+    let logo3 = document.getElementById("logo3");
+
+    logo1.onmouseover = function() {
+      logo1.style.transform = "rotate(360deg) scale(1.5)";
+    }
+    logo1.onmouseout = function() {
+      logo1.style.transform = "rotate(0deg) scale(1)";
+    }
+
+    logo2.onmouseover = function() {
+      logo2.style.transform = "rotate(360deg) scale(1.5)";
+    }
+    logo2.onmouseout = function() {
+      logo2.style.transform = "rotate(0deg) scale(1)";
+    }
+
+    logo3.onmouseover = function() {
+      logo3.style.transform = "rotate(360deg) scale(1.5)";
+    }
+    logo3.onmouseout = function() {
+      logo3.style.transform = "rotate(0deg) scale(1)";
+    }
+  </script>
 </body>
 </html>
