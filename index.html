@@ -4,80 +4,167 @@
   <meta charset="UTF-8">
   <title>Hoja de Vida - Santiago Velasco</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial;
-      background-color: #f0f0f0;
-      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background-color: #007bff;
+      background: linear-gradient(135deg, #007bff, #0056b3);
       color: white;
-      padding: 15px;
+      padding: 60px 20px;
       text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
     h1 {
-      font-size: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 42px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
     h2 {
+      font-family: 'Montserrat', sans-serif;
       color: #007bff;
-      padding: 5px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #007bff;
+      padding-bottom: 10px;
     }
     .progress {
-      margin: 10px;
+      height: 25px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      background-color: #e9ecef;
+      overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     }
     .progress-bar {
-      background-color: #007bff;
-    }
-    .navbar-nav {
-      margin: 0 auto;
+      background: linear-gradient(90deg, #007bff, #00bfff);
+      font-weight: 600;
+      text-align: right;
+      padding-right: 10px;
+      transition: width 1.5s ease-in-out;
     }
     .logo {
       width: 80px;
-      transition: transform 0.5s;
+      transition: transform 0.3s, filter 0.3s;
+    }
+    .logo:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 10px rgba(0, 123, 255, 0.5));
+    }
+    .list-group-item {
+      border: none;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .list-group-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .modal-content {
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .modal-header {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      color: white;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    .modal-footer {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #007bff, #00bfff);
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    }
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+    .nav-link {
+      color: #007bff !important;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #0056b3 !important;
+    }
+    .section {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <ul class="navbar-nav d-flex flex-row justify-content-center">
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="#inicio">Inicio</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="#perfil">Perfil</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="#habilidades">Habilidades</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="#proyectos">Proyectos</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="#educacion">Educación</a>
-        </li>
-        <li class="nav-item mx-3">
-          <a class="nav-link" href="#contacto">Contacto</a>
-        </li>
-      </ul>
+      <a class="navbar-brand" href="#inicio">Santiago Velasco</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#perfil">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#habilidades">Habilidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#proyectos">Proyectos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#educacion">Educación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
   <header id="inicio">
     <h1 id="nombre">Santiago Velasco Cobo</h1>
-    <p>Desarrollador de Software</p>
+    <p class="lead">Desarrollador de Software</p>
     <p>Edad: 26</p>
   </header>
 
   <div class="container">
-    <section id="perfil">
+    <section id="perfil" class="section">
       <h2>Perfil Personal</h2>
-      <p>Soy estudiante de Tecnología en Desarrollo de Software y me gusta mucho programar. Me enfoco en hacer aplicaciones web con Python, HTML y CSS. Siempre estoy aprendiendo cosas nuevas para mejorar. Me emociona crear páginas que la gente pueda usar y también estoy empezando a explorar cómo funcionan las bases de datos porque quiero hacer proyectos más grandes. Mi meta es algún día trabajar en un equipo donde pueda seguir creciendo y hacer algo útil con código.</p>
+      <p class="lead">Soy un estudiante de Tecnología en Desarrollo de Software con una pasión por la programación y el desarrollo web. Me especializo en la creación de aplicaciones web utilizando tecnologías como Python, HTML y CSS. Siempre estoy buscando aprender nuevas herramientas y técnicas para mejorar mis habilidades. Mi objetivo es contribuir en proyectos desafiantes y crecer profesionalmente en un entorno colaborativo.</p>
     </section>
 
-    <section id="habilidades">
+    <section id="habilidades" class="section">
       <h2>Mis Habilidades</h2>
       <div class="progress">
         <div class="progress-bar" id="bar1" style="width: 0%;">Python - 90%</div>
@@ -90,7 +177,7 @@
       </div>
     </section>
 
-    <section id="lenguajes">
+    <section id="lenguajes" class="section text-center">
       <h2>Lenguajes que uso</h2>
       <div class="row">
         <div class="col-md-4">
@@ -108,8 +195,8 @@
       </div>
     </section>
 
-    <section id="proyectos">
-      <h2>Proyectos que hice</h2>
+    <section id="proyectos" class="section">
+      <h2>Proyectos que realicé</h2>
       <ul class="list-group">
         <li class="list-group-item">
           <a href="#" data-toggle="modal" data-target="#proyecto1">Red Neuronal para Imágenes</a>
@@ -128,7 +215,7 @@
             <button type="button" class="close" data-dismiss="modal">X</button>
           </div>
           <div class="modal-body">
-            <p>Hice una red neuronal con Python y TensorFlow para reconocer imágenes, como gatos y perros.</p>
+            <p>Desarrollé una red neuronal utilizando Python y TensorFlow para reconocer imágenes, como gatos y perros.</p>
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -145,7 +232,7 @@
             <button type="button" class="close" data-dismiss="modal">X</button>
           </div>
           <div class="modal-body">
-            <p>Hice una app bancaria con Laravel. Tiene transferencias, consulta de saldos y más cosas.</p>
+            <p>Desarrollé una aplicación bancaria utilizando Laravel. Incluye funcionalidades como transferencias, consulta de saldos y más.</p>
           </div>
           <div class="modal-footer">
             <button class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -154,12 +241,12 @@
       </div>
     </div>
 
-    <section id="educacion">
+    <section id="educacion" class="section">
       <h2>Educación</h2>
-      <p><strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle (estoy estudiando)</p>
+      <p><strong>Tecnología en Desarrollo de Software</strong> - Universidad del Valle (en curso)</p>
     </section>
 
-    <section id="contacto">
+    <section id="contacto" class="section">
       <h2>Contacto</h2>
       <p>Email: santiago.velasco@correounivalle.edu.co</p>
       <p>Teléfono: +57 3005157699</p>
@@ -170,79 +257,34 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
-    let nombre = document.getElementById("nombre");
-    let posicion = 0;
-    function moverNombre() {
-      posicion = posicion + 1;
-      if (posicion > 10) {
-        posicion = -10;
-      }
-      nombre.style.marginTop = posicion + "px";
-    }
-    setInterval(moverNombre, 100);
+    // Animación de las barras de progreso
+    const barras = document.querySelectorAll(".progress-bar");
+    barras.forEach((barra) => {
+      const porcentaje = barra.textContent.match(/\d+/)[0];
+      barra.style.width = "0%";
+      setTimeout(() => {
+        barra.style.width = `${porcentaje}%`;
+      }, 500);
+    });
 
-    let barra1 = document.getElementById("bar1");
-    let barra2 = document.getElementById("bar2");
-    let barra3 = document.getElementById("bar3");
-    let ancho1 = 0;
-    let ancho2 = 0;
-    let ancho3 = 0;
+    // Efecto hover en los logos
+    const logos = document.querySelectorAll(".logo");
+    logos.forEach((logo) => {
+      logo.addEventListener("mouseover", () => {
+        logo.style.transform = "scale(1.1)";
+      });
+      logo.addEventListener("mouseout", () => {
+        logo.style.transform = "scale(1)";
+      });
+    });
 
-    function llenarBarras() {
-      if (ancho1 < 90) {
-        ancho1 = ancho1 + 1;
-        barra1.style.width = ancho1 + "%";
-      }
-      if (ancho2 < 80) {
-        ancho2 = ancho2 + 1;
-        barra2.style.width = ancho2 + "%";
-      }
-      if (ancho3 < 70) {
-        ancho3 = ancho3 + 1;
-        barra3.style.width = ancho3 + "%";
-      }
-    }
-    setInterval(llenarBarras, 20);
-
-    let modal1 = document.getElementById("modal1");
-    let modal2 = document.getElementById("modal2");
-    let colores = ["#ffcccc", "#cce5ff", "#ccffcc"];
-    let colorIndex = 0;
-
-    function cambiarColorModal() {
-      modal1.style.backgroundColor = colores[colorIndex];
-      modal2.style.backgroundColor = colores[colorIndex];
-      colorIndex = colorIndex + 1;
-      if (colorIndex > 2) {
-        colorIndex = 0;
-      }
-    }
-    setInterval(cambiarColorModal, 1000);
-
-    let logo1 = document.getElementById("logo1");
-    let logo2 = document.getElementById("logo2");
-    let logo3 = document.getElementById("logo3");
-
-    logo1.onmouseover = function() {
-      logo1.style.transform = "rotate(360deg) scale(1.5)";
-    }
-    logo1.onmouseout = function() {
-      logo1.style.transform = "rotate(0deg) scale(1)";
-    }
-
-    logo2.onmouseover = function() {
-      logo2.style.transform = "rotate(360deg) scale(1.5)";
-    }
-    logo2.onmouseout = function() {
-      logo2.style.transform = "rotate(0deg) scale(1)";
-    }
-
-    logo3.onmouseover = function() {
-      logo3.style.transform = "rotate(360deg) scale(1.5)";
-    }
-    logo3.onmouseout = function() {
-      logo3.style.transform = "rotate(0deg) scale(1)";
-    }
+    // Cambio de color en los modales
+    const modales = document.querySelectorAll(".modal-content");
+    setInterval(() => {
+      modales.forEach((modal) => {
+        modal.style.backgroundColor = `hsl(${Math.random() * 360}, 50%, 90%)`;
+      });
+    }, 2000);
   </script>
 </body>
 </html>
