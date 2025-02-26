@@ -6,19 +6,45 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #00bfff;
+      --bg-color: #f8f9fa;
+      --text-color: #333;
+      --card-bg: #fff;
+    }
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
+      transition: background-color 0.5s, color 0.5s;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+    }
+    /* Fondo interactivo con Particles.js */
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
     header {
-      background: linear-gradient(135deg, #007bff, #0056b3);
+      background: linear-gradient(135deg, var(--primary-color), #0056b3);
       color: white;
       padding: 60px 20px;
       text-align: center;
       margin-bottom: 30px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
     }
     h1 {
       font-family: 'Montserrat', sans-serif;
@@ -28,10 +54,10 @@
     }
     h2 {
       font-family: 'Montserrat', sans-serif;
-      color: #007bff;
+      color: var(--primary-color);
       font-weight: 600;
       margin-bottom: 20px;
-      border-bottom: 3px solid #007bff;
+      border-bottom: 3px solid var(--primary-color);
       padding-bottom: 10px;
     }
     .progress {
@@ -43,7 +69,7 @@
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     }
     .progress-bar {
-      background: linear-gradient(90deg, #007bff, #00bfff);
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
       font-weight: 600;
       text-align: right;
       padding-right: 10px;
@@ -61,7 +87,7 @@
       border: none;
       margin-bottom: 10px;
       border-radius: 10px;
-      background-color: #fff;
+      background-color: var(--card-bg);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -73,19 +99,18 @@
       border-radius: 15px;
       border: none;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
     }
     .modal-header {
-      background: linear-gradient(135deg, #007bff, #00bfff);
-      color: white;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+      background: transparent;
+      border-bottom: none;
     }
     .modal-footer {
-      border-bottom-left-radius: 15px;
-      border-bottom-right-radius: 15px;
+      border-top: none;
     }
     .btn-primary {
-      background: linear-gradient(135deg, #007bff, #00bfff);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       border: none;
       border-radius: 25px;
       padding: 10px 20px;
@@ -97,13 +122,13 @@
       box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
     }
     .navbar {
-      background-color: #fff;
+      background-color: var(--card-bg);
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       margin-bottom: 30px;
     }
     .nav-link {
-      color: #007bff !important;
+      color: var(--primary-color) !important;
       font-weight: 600;
       transition: color 0.3s;
     }
@@ -111,15 +136,67 @@
       color: #0056b3 !important;
     }
     .section {
-      background-color: #fff;
+      background-color: var(--card-bg);
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 30px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Botón para alternar modo oscuro */
+    .toggle-dark {
+      border: none;
+      background: none;
+      color: var(--primary-color);
+      font-size: 1rem;
+      cursor: pointer;
+      outline: none;
+    }
+    /* Estilos para el overlay sorpresa 3D */
+    #surpriseOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #surpriseOverlay canvas {
+      border: 2px solid var(--primary-color);
+      border-radius: 10px;
+    }
+    #closeSurprise {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--primary-color);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #closeSurprise:hover {
+      background: var(--secondary-color);
     }
   </style>
 </head>
 <body>
+  <!-- Fondo interactivo con Particles.js -->
+  <div id="particles-js"></div>
 
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
@@ -129,23 +206,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#perfil">Perfil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           <li class="nav-item">
-            <a class="nav-link" href="#inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#perfil">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#habilidades">Habilidades</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#proyectos">Proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#educacion">Educación</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
+            <button class="toggle-dark" id="darkModeToggle">Modo Oscuro</button>
           </li>
         </ul>
       </div>
@@ -253,38 +321,175 @@
     </section>
   </div>
 
+  <!-- Overlay sorpresa 3D -->
+  <div id="surpriseOverlay">
+    <button id="closeSurprise">Cerrar</button>
+    <!-- El canvas se creará dinámicamente -->
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Biblioteca Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Biblioteca Three.js para animación 3D -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
-    // Animación de las barras de progreso
-    const barras = document.querySelectorAll(".progress-bar");
-    barras.forEach((barra) => {
-      const porcentaje = barra.textContent.match(/\d+/)[0];
-      barra.style.width = "0%";
-      setTimeout(() => {
-        barra.style.width = `${porcentaje}%`;
-      }, 500);
+    // Configuración de Particles.js para un fondo interactivo
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 50,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": { "value": "#ffffff" },
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000000" },
+          "polygon": { "nb_sides": 5 }
+        },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" }
+        }
+      },
+      "retina_detect": true
     });
 
-    // Efecto hover en los logos
-    const logos = document.querySelectorAll(".logo");
-    logos.forEach((logo) => {
-      logo.addEventListener("mouseover", () => {
-        logo.style.transform = "scale(1.1)";
+    // Intersection Observer para animar secciones al hacer scroll
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
       });
-      logo.addEventListener("mouseout", () => {
-        logo.style.transform = "scale(1)";
-      });
-    });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
 
-    // Cambio de color en los modales
-    const modales = document.querySelectorAll(".modal-content");
-    setInterval(() => {
-      modales.forEach((modal) => {
-        modal.style.backgroundColor = `hsl(${Math.random() * 360}, 50%, 90%)`;
+    // Animación de las barras de progreso al ser visibles
+    const progressBars = document.querySelectorAll('.progress-bar');
+    const progressObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const porcentaje = entry.target.textContent.match(/\d+/)[0];
+          entry.target.style.width = porcentaje + '%';
+          progressObserver.unobserve(entry.target);
+        }
       });
-    }, 2000);
+    }, { threshold: 0.1 });
+    progressBars.forEach(bar => progressObserver.observe(bar));
+
+    // Función para alternar el modo oscuro
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+    if(localStorage.getItem('darkMode') === 'true'){
+      document.body.classList.add('dark-mode');
+      darkModeToggle.textContent = 'Modo Claro';
+    }
+
+    /* Función sorpresa: animación 3D con Three.js activada por voz */
+    let scene, camera, renderer, cube, animationId;
+    const overlay = document.getElementById('surpriseOverlay');
+
+    function init3D() {
+      // Crear escena y cámara
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+      camera.position.z = 3;
+      
+      // Crear renderer y agregar canvas al overlay
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
+      overlay.appendChild(renderer.domElement);
+
+      // Crear un cubo con material reflectante
+      const geometry = new THREE.BoxGeometry();
+      const material = new THREE.MeshStandardMaterial({ color: 0x007bff, metalness: 0.7, roughness: 0.1 });
+      cube = new THREE.Mesh(geometry, material);
+      scene.add(cube);
+
+      // Luces
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+      scene.add(ambientLight);
+      const pointLight = new THREE.PointLight(0xffffff, 1);
+      pointLight.position.set(5, 5, 5);
+      scene.add(pointLight);
+    }
+
+    function animate3D() {
+      animationId = requestAnimationFrame(animate3D);
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+
+    function startSurprise() {
+      if(overlay.style.display === "flex") return;
+      overlay.style.display = "flex";
+      // Eliminar canvas previo si existe
+      if(renderer && renderer.domElement.parentNode === overlay) {
+        overlay.removeChild(renderer.domElement);
+      }
+      init3D();
+      animate3D();
+    }
+
+    function closeSurprise() {
+      overlay.style.display = "none";
+      cancelAnimationFrame(animationId);
+      // Limpiar la escena 3D
+      if(renderer) {
+        renderer.dispose();
+        renderer.domElement.remove();
+      }
+    }
+
+    document.getElementById('closeSurprise').addEventListener('click', closeSurprise);
+
+    // Configuración de reconocimiento de voz para activar la sorpresa
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if(window.SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.lang = "es-ES";
+      recognition.onresult = (event) => {
+        for(let i = event.resultIndex; i < event.results.length; i++) {
+          if(event.results[i].isFinal) {
+            const command = event.results[i][0].transcript.trim().toLowerCase();
+            if(command.includes("sorpresa")) {
+              startSurprise();
+            }
+          }
+        }
+      };
+      recognition.onerror = (err) => { console.error("Speech recognition error", err); };
+      recognition.start();
+    } else {
+      console.warn("El reconocimiento de voz no es compatible en este navegador.");
+    }
   </script>
 </body>
 </html>
